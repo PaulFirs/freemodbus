@@ -24,10 +24,8 @@ if(NOT TARGET freemodbus_port)
     )
 endif()
 
-target_link_libraries(freemodbus
-    PUBLIC
-    freemodbus_port
-)
+target_link_libraries(freemodbus PUBLIC freemodbus_port)
+target_link_libraries(freemodbus_port PUBLIC freemodbus)
 
 if(FREEMB_MB_ASCII_ENABLED)
     target_compile_definitions(freemodbus PUBLIC -DMB_ASCII_ENABLED=1)
